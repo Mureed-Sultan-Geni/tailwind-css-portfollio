@@ -12,7 +12,7 @@
 /* Layout */
 @import 'layout/base';
 @import 'layout/typography';
-@import 'layout/navigation';
+/* @import 'layout/navigation'; */
 @import 'layout/footer';
 @import 'layout/common';
 
@@ -27,3 +27,6 @@
 @import 'tailwindcss/utilities';
 @import 'utilities/common';
 @import 'utilities/animation';
+
+/* Adding a new css file in it  */
+@import 'portfolio.css'

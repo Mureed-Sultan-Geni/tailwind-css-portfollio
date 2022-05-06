@@ -1,0 +1,495 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: #1D1D1D;
+  }
+  
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  #home {
+    margin-left: 11rem;
+    /* height: 450vh !important; */
+  }
+  #navigation{
+    max-width: 14vw;
+    @apply fixed z-50;
+    width:100%
+    img{
+      max-width: 50px;
+      height:50px
+    }
+  }
+  .menu {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    a {
+      border-top: 1px solid silver;
+      border-bottom: 1px solid silver;
+      padding: 10px 20px;
+      @apply text-gray-700;
+    }
+    a:hover {
+      transition: 500ms;
+      color: aqua;
+      font-weight: bold;
+    }
+  }
+  
+  .top-nav {
+    width: 10rem;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    right: auto;
+    bottom: 0;
+    position: fixed;
+    background-color: #181818;
+    z-index: 10;
+  
+    a {
+      color: gray;
+      text-decoration: none;
+      text-align: center;
+    }
+  }
+  
+  #portfolio-home {
+    width: 100vw;
+    height: 45rem;
+  
+    background-image: url('../images/pic-02.jpg');
+    background-repeat: no-repeat;
+
+  }
+  .intro {
+    padding-top: 8rem;
+    margin-left: 5rem;
+    background:none;
+    p {
+      background:none;
+      font-size: 4rem;
+      cursor: pointer;
+      margin: 0;    
+      animation:render 2s alternate forwards ;
+      animation-delay: 2s;
+      opacity: 0;
+    }
+  
+    span:hover {
+      animation: opac-change 1s ease-in-out infinite alternate;
+    }
+  
+    .contact-button {
+      padding: 10px 30px;
+      background: none;
+      color: #08fdd8;
+      border: 1px solid aqua;
+      font-weight: bold;
+    }
+  
+    .contact-button:hover {
+      background: #08fdd8;
+      color: white;
+      transition: ease-in-out 500ms;
+    }
+  }
+  @keyframes opac-render {
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+  #my-portfolio {
+    p:first-child {
+      margin-left:1rem;
+      margin-top: 5rem;
+      opacity: 0;
+      animation: opac-render 2s alternate forwards;
+      animation-delay:3s;
+  
+      span {
+        font-size: 4rem;
+        cursor: none;
+      }
+  
+      span:hover {
+        animation: opac-change 1s ease-in-out infinite alternate;
+      }
+    }
+  
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+  
+      img {
+        width: 15rem;
+        height: 10rem;
+        margin: 1rem;
+      }
+  
+      .box1 {
+        position: relative;
+      }
+  
+      p {
+        position: absolute;
+        top: 5rem;
+        color: white;
+        left: 1.5rem;
+        z-index: -1;
+        font-weight: bold;
+        font-size: 15px;
+      }
+  
+      img:hover {
+        opacity: 0.5;
+        transition: 1s;
+  
+        p {
+          z-index: 5;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  
+  #myself {
+    display: flex;
+    width: 95vw;
+    margin: auto;
+    opacity: 0;
+    animation: opac-render 2s alternate forwards;
+    animation-delay: 1s;
+  
+    p:first-child {
+      font-size: 4rem;
+      cursor: pointer;
+      color: aqua;
+      font-weight: bold;
+  
+      span:hover {
+        animation: opac-change 1s ease-in-out infinite alternate;
+      }
+    }
+  
+    .text-intro {
+      max-width: 45%;
+      padding: 0 1.5rem 0 0;
+      width: 100%;
+      text-align: justify;
+    }
+  
+    .img-intro {
+      max-width: 40%;
+      width: 100%;
+      height: 170px;
+    }
+  }
+  
+  #contactme {
+    display: flex;
+    margin-top: 5rem;
+  
+    .contact-input {
+      max-width: 40vw;
+      padding: 0 20px 0 0;
+      opacity: 0;
+      animation: opac-render 2s alternate forwards;
+      animation-delay: 1s;
+  
+      p:first-child {
+        font-size: 4rem;
+        cursor: pointer;
+        color: aqua;
+        font-weight: bold;
+  
+        span:hover {
+          animation: opac-change 1s ease-in-out infinite alternate;
+        }
+      }
+  
+      .input-area {
+        input:first-child {
+          max-width: 99%;
+          margin-top: 0.5rem;
+          width: 100%;
+          background: none;
+          border: 1px solid green;
+          padding: 10px 5px;
+          font-weight: bold;
+          outline: none;
+        }
+  
+        input:first-child:focus {
+          color: red;
+          border-bottom: 2px solid aqua;
+        }
+  
+        textarea {
+          max-width: 99%;
+          margin-top: 0.5rem;
+          width: 100%;
+          background: none;
+          border: 1px solid green;
+          padding: 10px 5px;
+          font-weight: bold;
+          outline: none;
+        }
+  
+        textarea:focus {
+          color: red;
+          border-bottom: 2px solid aqua;
+        }
+      }
+  
+      .first-fields {
+        input {
+          margin-top: 0.5rem;
+          max-width: 49%;
+          width: 100%;
+          background: none;
+          border: 1px solid green;
+          padding: 10px 5px;
+          font-weight: bold;
+          outline: none;
+        }
+  
+        input:focus-visible {
+          color: red;
+          border-bottom: 2px solid aqua;
+        }
+      }
+  
+      button {
+        background: none;
+        border: 1px solid green;
+        padding: 10px 50px;
+        color: green;
+        font-weight: bold;
+      }
+  
+      button:hover {
+        background-color: green;
+        color: white;
+        transition: 0.5s;
+      }
+    }
+  
+    .maps {
+      width: 40vw;
+      opacity: 0;
+      animation: opac-render 2s alternate forwards;
+      animation-delay: 2s;
+  
+      iframe {
+        width: 100%;
+      }
+    }
+  }
+  
+  /* About page start here  */
+  
+  #about {
+    margin-left: 11rem;
+  
+    #about-component {
+      display: flex;
+      height: 100vh;
+      padding-left: 2rem;
+      background-image: linear-gradient(#413d90, #3c3986);
+      opacity: 0;
+      animation: opac-render 2s alternate forwards;
+      animation-delay: 1s;
+  
+      .about-text {
+        max-width: 50vw;
+        width: 100%;
+        text-align: justify;
+        padding: 0 5rem 0 0;
+  
+        p:first-child {
+          margin: 11rem 0 3rem 0;
+        }
+  
+        span {
+          font-size: 4rem;
+          cursor: none;
+          color: aqua;
+        }
+  
+        span:hover {
+          animation: opac-change 1s ease-in-out infinite alternate;
+        }
+      }
+    }
+  }
+  #skills {
+    margin-left: 15rem;
+    margin-top: 10rem;
+    #myskill {
+      display: flex;
+      opacity: 0;
+      animation: opac-render 2s alternate forwards;
+      animation-delay: 1s;
+      .skill-details {
+        max-width: 49vw;
+        width: 100%;
+        margin-top: 4rem;
+        font-size: 1.5rem;
+      }
+    }
+    .skill-text {
+      max-width: 49vw;
+      width: 100%;
+      text-align: justify;
+      padding: 0 2.5rem 0 0;
+      a{
+        color: aqua;
+        text-decoration:none;
+      }
+      p:first-child {
+        span {
+          font-size: 4rem;
+          cursor: none;
+          color: aqua;
+        }
+        span:hover {
+          animation: opac-change 1s ease-in-out infinite alternate;
+        }
+      }
+    }
+  }
+  
+  .progress {
+    width: 100%;
+    max-width: 260px;
+    height: 1rem;
+    background: #e1e4e8;
+    border-radius: 50px;
+    overflow: hidden;
+  }
+  
+  .progress-bar {
+    display: block;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      #ffd33d,
+      #ea4aaa 17%,
+      #b34bff 34%,
+      #01feff 51%,
+      #ffd33d 68%,
+      #ea4aaa 85%,
+      #b34bff
+    );
+    background-size: 300% 100%;
+    animation: progress-animation 2s linear infinite;
+  }
+  #contactpage{
+    margin-left: 12rem;
+  }
+  /* animation  */
+  @keyframes opac-change {
+    0% {
+      opacity: 0.2;
+      color: gray;
+    }
+  
+    50% {
+      color: pink;
+    }
+  
+    100% {
+      opacity: 1;
+      color: red;
+    }
+  }
+  
+  @keyframes progress-animation {
+    0% {
+      background-position: 100%;
+    }
+    100% {
+      background-position: 0;
+    }
+  }
+  @keyframes render {
+    from{
+      opacity: 0;
+      transform: rotate(360deg);
+    }
+    to{
+      opacity: 1;
+      transform: rotate(0deg);
+  
+    }
+  }
+  @keyframes opac-render {
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+  /* Media querries  */
+  @media (max-width:800px){
+    #portfolio-home{
+      .intro{
+        p{
+          font-size: 2em;
+        }
+      }
+    }
+    #my-portfolio{
+      p{
+        text-align:center;
+      }
+      .gallery{
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    #myself{
+      display: block;
+      width: fit-content;
+      .text-intro{
+        max-width: 100%;
+        text-align:center;
+        width:100%;
+        p{
+          max-width: ;
+        }
+      }
+      .img-intro{
+        max-width: 30vw;
+        width: 100%;
+        margin: auto;
+      }
+    }
+    #contactme{
+    flex-direction: column;
+      .contact-input{
+        max-width: 100%;
+      }
+    }
+  }
+  @media (max-width:900px) {
+    #about-component{
+      flex-direction: column;
+      height: auto !important;
+      .about-text{
+        max-width: 100% !important;
+      }
+    }
+    #myskill{
+      flex-direction: column;
+    }
+  }
