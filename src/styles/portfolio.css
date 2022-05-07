@@ -1,495 +1,439 @@
 * {
-    margin: 0;
-    padding: 0;
-    background-color: #1D1D1D;
-  }
-  
-  img {
-    width: 100%;
-    height: 100%;
-  }
-  
-  #home {
-    margin-left: 11rem;
-    /* height: 450vh !important; */
-  }
-  #navigation{
-    max-width: 14vw;
-    @apply fixed z-50;
-    width:100%
-    img{
-      max-width: 50px;
-      height:50px
-    }
-  }
-  .menu {
-    padding-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    a {
-      border-top: 1px solid silver;
-      border-bottom: 1px solid silver;
-      padding: 10px 20px;
-      @apply text-gray-700;
-    }
-    a:hover {
-      transition: 500ms;
-      color: aqua;
-      font-weight: bold;
-    }
-  }
-  
-  .top-nav {
-    width: 10rem;
-    display: flex;
-    flex-direction: column;
-    top: 0;
-    right: auto;
-    bottom: 0;
-    position: fixed;
-    background-color: #181818;
-    z-index: 10;
-  
-    a {
-      color: gray;
-      text-decoration: none;
-      text-align: center;
-    }
-  }
-  
-  #portfolio-home {
-    width: 100vw;
-    height: 45rem;
-  
-    background-image: url('../images/pic-02.jpg');
-    background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  @apply text-white;
+}
+body {
+  background-color: #1d1d1d;
+}
+img {
+  @apply w-full h-full;
+}
 
-  }
-  .intro {
-    padding-top: 8rem;
-    margin-left: 5rem;
-    background:none;
+#home {
+  @apply ml-48;
+}
+#navigation {
+  @apply w-40;
+  a {
     p {
-      background:none;
-      font-size: 4rem;
-      cursor: pointer;
-      margin: 0;    
-      animation:render 2s alternate forwards ;
-      animation-delay: 2s;
-      opacity: 0;
+      @apply text-white;
     }
-  
+  }
+  @apply fixed z-50;
+  img {
+    max-width: 200px;
+    height: 200px;
+  }
+}
+.menu {
+  @apply pt-8 flex flex-col justify-center;
+  a {
+    @apply border-t-2 border-gray-500 border-b-2;
+    @apply pt-3 pb-5;
+    @apply text-gray-700;
+    @apply text-center;
+  }
+  a:hover {
+    transition: 500ms;
+    @apply text-green-600 font-bold;
+  }
+}
+
+.top-nav {
+  @apply w-40 flex flex-col top-0 right-auto bottom-0 fixed;
+  background-color: #181818;
+  @apply z-10;
+
+  a {
+    @apply text-gray-700 no-underline text-center;
+  }
+}
+
+#portfolio-home {
+  @apply w-screen h-screen;
+  background-image: url("../images/pic-02.jpg");
+  @apply bg-cover;
+  @apply bg-no-repeat;
+}
+.intro {
+  @apply mt-1 ml-20 pt-56;
+  background: none;
+  p {
+    background: none;
+    @apply text-6xl cursor-pointer m-0 opacity-0;
+    animation: render 2s alternate forwards;
+    animation-delay: 2s;
+  }
+  span {
+    background: none;
+  }
+  span:hover {
+    animation: opac-change 1s ease-in-out infinite alternate;
+  }
+
+  .contact-button {
+    @apply py-4 px-8 font-bold;
+    background: none;
+    color: #08fdd8;
+    border: 1px solid aqua;
+  }
+
+  .contact-button:hover {
+    background: #08fdd8;
+    @apply text-white;
+    transition: ease-in-out 500ms;
+  }
+}
+@keyframes opac-render {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#my-portfolio {
+  p:first-child {
+    @apply ml-4 mt-8 opacity-0;
+    animation: opac-render 2s alternate forwards;
+    animation-delay: 3s;
+    span {
+      @apply text-6xl cursor-default;
+    }
     span:hover {
       animation: opac-change 1s ease-in-out infinite alternate;
     }
-  
-    .contact-button {
-      padding: 10px 30px;
-      background: none;
-      color: #08fdd8;
-      border: 1px solid aqua;
-      font-weight: bold;
-    }
-  
-    .contact-button:hover {
-      background: #08fdd8;
-      color: white;
-      transition: ease-in-out 500ms;
-    }
   }
-  @keyframes opac-render {
-    0%{
-      opacity: 0;
-    }
-    100%{
-      opacity: 1;
-    }
+  p {
+    @apply text-white;
   }
-  #my-portfolio {
-    p:first-child {
-      margin-left:1rem;
-      margin-top: 5rem;
-      opacity: 0;
-      animation: opac-render 2s alternate forwards;
-      animation-delay:3s;
-  
-      span {
-        font-size: 4rem;
-        cursor: none;
-      }
-  
-      span:hover {
-        animation: opac-change 1s ease-in-out infinite alternate;
-      }
+  .gallery {
+    @apply flex flex-wrap;
+
+    img {
+      @apply w-64 h-40 m-4;
     }
-  
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-  
+
+    .box1 {
+      @apply relative;
+    }
+
+    p {
+      @apply absolute text-white;
+      left: 1.5rem;
+      top: 5rem;
+      z-index: -1;
+      @apply font-bold text-base;
+    }
+    .box1:hover {
       img {
-        width: 15rem;
-        height: 10rem;
-        margin: 1rem;
-      }
-  
-      .box1 {
-        position: relative;
-      }
-  
-      p {
-        position: absolute;
-        top: 5rem;
-        color: white;
-        left: 1.5rem;
-        z-index: -1;
-        font-weight: bold;
-        font-size: 15px;
-      }
-  
-      img:hover {
-        opacity: 0.5;
+        @apply opacity-50;
         transition: 1s;
-  
-        p {
-          z-index: 5;
-          opacity: 1;
-        }
+      }
+      p {
+        @apply z-10 opacity-100;
+        background: none;
       }
     }
   }
-  
-  #myself {
-    display: flex;
-    width: 95vw;
-    margin: auto;
+}
+
+#myself {
+  @apply flex w-11o12 m-auto opacity-0;
+  animation: opac-render 2s alternate forwards;
+  animation-delay: 1s;
+
+  p:first-child {
+    @apply text-6xl cursor-pointer text-blue-700 font-bold;
+
+    span:hover {
+      animation: opac-change 1s ease-in-out infinite alternate;
+    }
+  }
+
+  .text-intro {
+    max-width: 45%;
+    padding: 0 1.5rem 0 0;
+    @apply w-full text-justify;
+    p {
+      @apply text-white;
+    }
+  }
+
+  .img-intro {
+    max-width: 40%;
+    @apply w-full;
+  }
+}
+
+#contactme {
+  @apply flex mt-20;
+  .contact-input {
+    max-width: 40vw;
+    padding: 0 20px 0 0;
     opacity: 0;
     animation: opac-render 2s alternate forwards;
     animation-delay: 1s;
-  
+    p {
+      @apply text-white;
+      margin: 0px;
+    }
     p:first-child {
-      font-size: 4rem;
-      cursor: pointer;
-      color: aqua;
-      font-weight: bold;
-  
+      @apply text-6xl cursor-pointer text-blue-600 font-bold;
       span:hover {
         animation: opac-change 1s ease-in-out infinite alternate;
       }
     }
-  
-    .text-intro {
-      max-width: 45%;
-      padding: 0 1.5rem 0 0;
-      width: 100%;
-      text-align: justify;
-    }
-  
-    .img-intro {
-      max-width: 40%;
-      width: 100%;
-      height: 170px;
-    }
-  }
-  
-  #contactme {
-    display: flex;
-    margin-top: 5rem;
-  
-    .contact-input {
-      max-width: 40vw;
-      padding: 0 20px 0 0;
-      opacity: 0;
-      animation: opac-render 2s alternate forwards;
-      animation-delay: 1s;
-  
-      p:first-child {
-        font-size: 4rem;
-        cursor: pointer;
-        color: aqua;
-        font-weight: bold;
-  
-        span:hover {
-          animation: opac-change 1s ease-in-out infinite alternate;
-        }
-      }
-  
-      .input-area {
-        input:first-child {
-          max-width: 99%;
-          margin-top: 0.5rem;
-          width: 100%;
-          background: none;
-          border: 1px solid green;
-          padding: 10px 5px;
-          font-weight: bold;
-          outline: none;
-        }
-  
-        input:first-child:focus {
-          color: red;
-          border-bottom: 2px solid aqua;
-        }
-  
-        textarea {
-          max-width: 99%;
-          margin-top: 0.5rem;
-          width: 100%;
-          background: none;
-          border: 1px solid green;
-          padding: 10px 5px;
-          font-weight: bold;
-          outline: none;
-        }
-  
-        textarea:focus {
-          color: red;
-          border-bottom: 2px solid aqua;
-        }
-      }
-  
-      .first-fields {
-        input {
-          margin-top: 0.5rem;
-          max-width: 49%;
-          width: 100%;
-          background: none;
-          border: 1px solid green;
-          padding: 10px 5px;
-          font-weight: bold;
-          outline: none;
-        }
-  
-        input:focus-visible {
-          color: red;
-          border-bottom: 2px solid aqua;
-        }
-      }
-  
-      button {
+
+    .input-area {
+      input:first-child {
+        @apply w-11o12 mt-2 py-3 px-1 font-bold;
         background: none;
         border: 1px solid green;
-        padding: 10px 50px;
-        color: green;
-        font-weight: bold;
+        outline: none;
       }
-  
-      button:hover {
-        background-color: green;
-        color: white;
-        transition: 0.5s;
+
+      input:first-child:focus {
+        @apply text-red-600;
+        border-bottom: 2px solid aqua;
+      }
+
+      textarea {
+        max-width: 99%;
+        background: none;
+        border: 1px solid green;
+        outline: none;
+        @apply mt-2 w-full py-3 px-1 font-bold;
+      }
+
+      textarea:focus {
+        @apply text-red-600;
+        border-bottom: 2px solid aqua;
       }
     }
-  
-    .maps {
-      width: 40vw;
-      opacity: 0;
-      animation: opac-render 2s alternate forwards;
-      animation-delay: 2s;
-  
-      iframe {
-        width: 100%;
+
+    .first-fields {
+      input {
+        background: none;
+        border: 1px solid green;
+        outline: none;
+        @apply mt-2 w-2o4 py-3 px-1 font-bold;
+      }
+
+      input:focus-visible {
+        @apply text-red-600;
+        border-bottom: 2px solid aqua;
       }
     }
-  }
-  
-  /* About page start here  */
-  
-  #about {
-    margin-left: 11rem;
-  
-    #about-component {
-      display: flex;
-      height: 100vh;
-      padding-left: 2rem;
-      background-image: linear-gradient(#413d90, #3c3986);
-      opacity: 0;
-      animation: opac-render 2s alternate forwards;
-      animation-delay: 1s;
-  
-      .about-text {
-        max-width: 50vw;
-        width: 100%;
-        text-align: justify;
-        padding: 0 5rem 0 0;
-  
-        p:first-child {
-          margin: 11rem 0 3rem 0;
-        }
-  
-        span {
-          font-size: 4rem;
-          cursor: none;
-          color: aqua;
-        }
-  
-        span:hover {
-          animation: opac-change 1s ease-in-out infinite alternate;
-        }
-      }
+
+    button {
+      background: none;
+      border: 1px solid green;
+      @apply py-3 px-12 text-green-600 font-bold;
+    }
+
+    button:hover {
+      @apply bg-green-600 text-white;
+      transition: 0.5s;
     }
   }
-  #skills {
-    margin-left: 15rem;
-    margin-top: 10rem;
-    #myskill {
-      display: flex;
-      opacity: 0;
-      animation: opac-render 2s alternate forwards;
-      animation-delay: 1s;
-      .skill-details {
-        max-width: 49vw;
-        width: 100%;
-        margin-top: 4rem;
-        font-size: 1.5rem;
-      }
+
+  .maps {
+    width: 40vw;
+    @apply opacity-0;
+    animation: opac-render 2s alternate forwards;
+    animation-delay: 2s;
+
+    iframe {
+      @apply mt-20 w-full;
     }
-    .skill-text {
-      max-width: 49vw;
-      width: 100%;
-      text-align: justify;
-      padding: 0 2.5rem 0 0;
-      a{
-        color: aqua;
-        text-decoration:none;
-      }
+  }
+}
+
+/* About page start here  */
+
+#about {
+  @apply ml-40;
+  #about-component {
+    @apply flex h-screen pl-8 opacity-0;
+    background-image: linear-gradient(#413d90, #3c3986);
+    animation: opac-render 2s alternate forwards;
+    animation-delay: 1s;
+
+    .about-text {
+      max-width: 50vw;
+      @apply w-full pl-20 text-justify;
+
       p:first-child {
-        span {
-          font-size: 4rem;
-          cursor: none;
-          color: aqua;
-        }
-        span:hover {
-          animation: opac-change 1s ease-in-out infinite alternate;
-        }
+        @apply mt-40 mb-12;
+      }
+
+      span {
+        @apply text-6xl cursor-pointer text-blue-600;
+      }
+
+      span:hover {
+        animation: opac-change 1s ease-in-out infinite alternate;
       }
     }
   }
-  
-  .progress {
-    width: 100%;
-    max-width: 260px;
-    height: 1rem;
-    background: #e1e4e8;
-    border-radius: 50px;
-    overflow: hidden;
+}
+#skills {
+  @apply ml-56 mt-40;
+  #myskill {
+    @apply flex opacity-0;
+    animation: opac-render 2s alternate forwards;
+    animation-delay: 1s;
+    .skill-details {
+      max-width: 49vw;
+      @apply w-full mt-16 text-2xl;
+      p {
+        @apply text-white my-3;
+      }
+    }
   }
-  
-  .progress-bar {
+  .skill-text {
+    max-width: 49vw;
+    @apply w-full text-justify pr-10;
+    a {
+      @apply text-blue-500 no-underline;
+    }
+    p {
+      @apply text-white;
+    }
+    p:first-child {
+      span {
+        @apply text-6xl cursor-pointer text-green-600; 
+      }
+      span:hover {
+        animation: opac-change 1s ease-in-out infinite alternate;
+      }
+    }
+  }
+}
+
+.progressbox {
+  @apply w-full h-4;
+  max-width: 260px;
+  background: #e1e4e8;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.progress-bar-line {
+  display: block;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #ffd33d,
+    #ea4aaa 17%,
+    #b34bff 34%,
+    #01feff 51%,
+    #ffd33d 68%,
+    #ea4aaa 85%,
+    #b34bff
+  );
+  background-size: 300% 100%;
+  animation: progress-animation 2s linear infinite;
+}
+#contactpage {
+  margin-left: 12rem;
+}
+/* animation  */
+@keyframes opac-change {
+  0% {
+    opacity: 0.2;
+    color: gray;
+  }
+
+  50% {
+    color: pink;
+  }
+
+  100% {
+    opacity: 1;
+    color: red;
+  }
+}
+
+@keyframes progress-animation {
+  0% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: 0;
+  }
+}
+@keyframes render {
+  from {
+    opacity: 0;
+    transform: rotate(360deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
+@keyframes opac-render {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Media querries  */
+@media (max-width: 800px) {
+  #portfolio-home {
+    .intro {
+      p {
+        font-size: 2em;
+      }
+    }
+  }
+  #my-portfolio {
+    p {
+      text-align: center;
+    }
+    .gallery {
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  #myself {
     display: block;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      #ffd33d,
-      #ea4aaa 17%,
-      #b34bff 34%,
-      #01feff 51%,
-      #ffd33d 68%,
-      #ea4aaa 85%,
-      #b34bff
-    );
-    background-size: 300% 100%;
-    animation: progress-animation 2s linear infinite;
-  }
-  #contactpage{
-    margin-left: 12rem;
-  }
-  /* animation  */
-  @keyframes opac-change {
-    0% {
-      opacity: 0.2;
-      color: gray;
-    }
-  
-    50% {
-      color: pink;
-    }
-  
-    100% {
-      opacity: 1;
-      color: red;
-    }
-  }
-  
-  @keyframes progress-animation {
-    0% {
-      background-position: 100%;
-    }
-    100% {
-      background-position: 0;
-    }
-  }
-  @keyframes render {
-    from{
-      opacity: 0;
-      transform: rotate(360deg);
-    }
-    to{
-      opacity: 1;
-      transform: rotate(0deg);
-  
-    }
-  }
-  @keyframes opac-render {
-    0%{
-      opacity: 0;
-    }
-    100%{
-      opacity: 1;
-    }
-  }
-  /* Media querries  */
-  @media (max-width:800px){
-    #portfolio-home{
-      .intro{
-        p{
-          font-size: 2em;
-        }
+    width: fit-content;
+    .text-intro {
+      max-width: 100%;
+      text-align: center;
+      width: 100%;
+      p {
+        max-width: ;
       }
     }
-    #my-portfolio{
-      p{
-        text-align:center;
-      }
-      .gallery{
-        align-items: center;
-        justify-content: center;
-      }
+    .img-intro {
+      max-width: 30vw;
+      width: 100%;
+      margin: auto;
     }
-    #myself{
-      display: block;
-      width: fit-content;
-      .text-intro{
-        max-width: 100%;
-        text-align:center;
-        width:100%;
-        p{
-          max-width: ;
-        }
-      }
-      .img-intro{
-        max-width: 30vw;
-        width: 100%;
-        margin: auto;
-      }
-    }
-    #contactme{
+  }
+  #contactme {
     flex-direction: column;
-      .contact-input{
-        max-width: 100%;
-      }
+    .contact-input {
+      max-width: 100%;
     }
   }
-  @media (max-width:900px) {
-    #about-component{
-      flex-direction: column;
-      height: auto !important;
-      .about-text{
-        max-width: 100% !important;
-      }
-    }
-    #myskill{
-      flex-direction: column;
+}
+@media (max-width: 900px) {
+  #about-component {
+    flex-direction: column;
+    height: auto !important;
+    .about-text {
+      max-width: 100% !important;
     }
   }
+  #myskill {
+    flex-direction: column;
+  }
+}
